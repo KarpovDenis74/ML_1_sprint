@@ -1,0 +1,27 @@
+{
+  "model": "openai/gpt-oss-20b",
+  "n": 25,
+  "valid_rate": 0.24,
+  "input_tokens": 44332,
+  "output_tokens": 15568,
+  "elapsed_sec": 65.165,
+  "cost_per_1000": 72.8288,
+  "valid": 6,
+  "errors_by_reason": {
+    "длина description": 19,
+    "предложений": 19,
+    "pros": 19,
+    "cons": 19,
+    "tags": 19
+  },
+  "avg_latency": 7.551,
+  "avg_description_len": 305.8,
+  "http_errors": {
+    "429": 0,
+    "400": 0,
+    "5xx": 0,
+    "timeout": 0,
+    "other": 0
+  },
+  "json_mode": "object"
+}

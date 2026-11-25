@@ -305,7 +305,7 @@ def _decision(report: dict | None) -> str:
         "на выбранном способе. Аренда T4 считается и за простой: если ВМ поднимать под каждый "
         "короткий запуск, холодный старт оплачивается, даже когда карточек мало."
     )
-    if not report or not report["api_comparison"].get("n"):
+    if not report:
         return (
             formula
             + "\n\nЧисла подставятся после бенчмарка и этапа 6. "
@@ -314,6 +314,40 @@ def _decision(report: dict | None) -> str:
             "на время пакета и выключают, почти наверняка дешевле помесячной аренды без выключения "
             "и дешевле API, если карточка на GPU выходит заметно дешевле 25 ₽."
         )
+    if not report["api_comparison"].get("n"):
+        run = report["run"]
+        metrics = report["metrics"]
+        per_vllm = metrics["cost_vllm_per_1000"]
+        throughput = metrics["throughput"] or 0.0
+        plan_vllm = monthly_costs(PLAN_VOLUME, per_vllm, 0.0)["vllm"]
+        always_on_rub = GPU_RUB_PER_HOUR * HOURS_IN_MONTH
+        parts = [
+            formula,
+            f"Полный прогон: {run['n']} карточек за {run['elapsed_sec']:.1f} с, "
+            f"это {per_vllm:.2f} ₽ за 1000 на своём сервере. "
+            f"На 50 000 карточек, если платить только за время генерации, это {plan_vllm:.0f} ₽.",
+        ]
+        if throughput:
+            one_session = session_cost(PLAN_VOLUME, throughput, 1, round_up_hour=False)
+            one_session_hour = session_cost(PLAN_VOLUME, throughput, 1, round_up_hour=True)
+            daily = session_cost(PLAN_VOLUME, throughput, 30, round_up_hour=True)
+            parts.append(
+                f"При измеренной скорости {throughput:.3f} карт/с один месячный пакет на 50 000 карточек "
+                f"занимает {PLAN_VOLUME / throughput / 3600:.1f} ч чистой генерации плюс старт: "
+                f"{one_session:.0f} ₽ при посекундной оплате и {one_session_hour:.0f} ₽, "
+                f"если незавершённый час округляется вверх. "
+                f"Тридцать ежедневных включений с округлением до часа стоят {daily:.0f} ₽, "
+                f"потому что почти каждый день оплачивается полный час простоя после короткого пакета."
+            )
+        parts.append(
+            "Прогон через OpenRouter не выполнен: ключ OPENROUTER_API_KEY в окружении не задан. "
+            "Объём, ниже которого API дешевле из-за простоя GPU, по этим данным не считается: "
+            "в формулу API входят токены usage ответа OpenRouter, а не токены Qwen. "
+            f"Порог 25 ₽ на своём сервере выполнен ({per_vllm:.2f} ₽ за 1000). "
+            f"Постоянно включённая T4 стоит {always_on_rub:.0f} ₽ в месяц независимо от числа карточек, "
+            "поэтому на плановые 50 000 карточек сервер включают на пакет и выключают."
+        )
+        return "\n\n".join(parts)
     run = report["run"]
     metrics = report["metrics"]
     api = report["api_comparison"]
@@ -418,10 +452,14 @@ def _measurements(report: dict | None, diagnostics: dict | None) -> str:
             f"({metrics['time_for_300_sec'] / 60:.1f} мин) при n = {run['n']}.",
             f"- стоимость: на своём сервере {metrics['cost_vllm_per_1000']:.2f} ₽/1000 "
             f"из полного прогона ({run['elapsed_sec']} с, {run['n']} карточек); "
-            f"через API {report['api_comparison']['cost_per_1000']:.2f} ₽/1000 "
-            f"из прогона этапа 6 ({report['api_comparison']['n']} карточек, "
-            f"{report['api_comparison']['input_tokens']} входных и "
-            f"{report['api_comparison']['output_tokens']} выходных токенов).",
+            + (
+                f"через API {report['api_comparison']['cost_per_1000']:.2f} ₽/1000 "
+                f"из прогона этапа 6 ({report['api_comparison']['n']} карточек, "
+                f"{report['api_comparison']['input_tokens']} входных и "
+                f"{report['api_comparison']['output_tokens']} выходных токенов)."
+                if report["api_comparison"].get("n")
+                else "сравнение с API не запускалось: в окружении не было OPENROUTER_API_KEY."
+            ),
             f"- среднее число запросов на карточку, включая повтор при браке формата: {run['avg_attempts']}.{long}",
         ]
     )

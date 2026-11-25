@@ -1,0 +1,8 @@
+{
+  "max_first_prompt_tokens": 1004,
+  "n_over_1500": 0,
+  "n_truncated": 0,
+  "n_long": 45,
+  "avg_reviews_used_long": 14.0,
+  "avg_unique_long": 14.0
+}

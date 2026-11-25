@@ -1,0 +1,42 @@
+{
+  "run": {
+    "model": "Qwen/Qwen2.5-1.5B-Instruct",
+    "concurrency": 32,
+    "params": {
+      "temperature": 0.3,
+      "top_p": 0.9,
+      "top_k": 20,
+      "repetition_penalty": 1.1,
+      "max_tokens": 350
+    },
+    "elapsed_sec": 187.735,
+    "input_tokens": 324730,
+    "output_tokens": 79649,
+    "n": 300,
+    "avg_latency": 19.068,
+    "avg_attempts": 1.163
+  },
+  "metrics": {
+    "valid": 258,
+    "valid_rate": 0.86,
+    "throughput": 1.598,
+    "time_for_300_sec": 187.735,
+    "cost_vllm_per_1000": 11.2989,
+    "errors_by_reason": {
+      "предложений": 38,
+      "tags": 13,
+      "длина description": 12,
+      "pros": 7,
+      "cons": 7
+    }
+  },
+  "api_comparison": {
+    "model": "openai/gpt-oss-20b",
+    "n": 25,
+    "valid_rate": 0.24,
+    "input_tokens": 44332,
+    "output_tokens": 15568,
+    "elapsed_sec": 65.165,
+    "cost_per_1000": 72.8288
+  }
+}

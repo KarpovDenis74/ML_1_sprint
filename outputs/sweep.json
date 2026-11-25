@@ -1,0 +1,46 @@
+{
+  "rows": [
+    {
+      "concurrency": 1,
+      "n": 40,
+      "elapsed_sec": 176.643,
+      "throughput": 0.2264,
+      "avg_latency": 4.416,
+      "valid_rate": 0.9,
+      "valid": 36,
+      "time_for_300_sec": 1324.8
+    },
+    {
+      "concurrency": 4,
+      "n": 40,
+      "elapsed_sec": 58.26,
+      "throughput": 0.6866,
+      "avg_latency": 5.719,
+      "valid_rate": 0.9,
+      "valid": 36,
+      "time_for_300_sec": 436.9
+    },
+    {
+      "concurrency": 16,
+      "n": 40,
+      "elapsed_sec": 32.451,
+      "throughput": 1.2326,
+      "avg_latency": 10.179,
+      "valid_rate": 0.9,
+      "valid": 36,
+      "time_for_300_sec": 243.4
+    },
+    {
+      "concurrency": 32,
+      "n": 40,
+      "elapsed_sec": 29.368,
+      "throughput": 1.362,
+      "avg_latency": 15.374,
+      "valid_rate": 0.9,
+      "valid": 36,
+      "time_for_300_sec": 220.3
+    }
+  ],
+  "chosen_concurrency": 32,
+  "n": 40
+}

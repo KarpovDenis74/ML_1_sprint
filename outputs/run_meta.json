@@ -1,0 +1,16 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "concurrency": 32,
+  "params": {
+    "temperature": 0.3,
+    "top_p": 0.9,
+    "top_k": 20,
+    "repetition_penalty": 1.1,
+    "max_tokens": 350
+  },
+  "elapsed_sec": 187.73516769300022,
+  "n": 300,
+  "max_attempts": 2,
+  "json_mode": "guided",
+  "seed": 1
+}

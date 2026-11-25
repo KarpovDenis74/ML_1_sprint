@@ -1,0 +1,337 @@
+{
+  "rows": [
+    {
+      "valid_rate": 0.9,
+      "avg_description_len": 290.9,
+      "avg_output_tokens": 261.5,
+      "avg_attempts": 1.1,
+      "truncation_rate": 0.05,
+      "avg_latency": 7.072,
+      "errors_by_reason": {
+        "предложений": 2,
+        "длина description": 1,
+        "pros": 1,
+        "cons": 1,
+        "tags": 1
+      },
+      "n": 20,
+      "valid": 18,
+      "elapsed_sec": 23.089,
+      "json_mode_effective": "guided",
+      "parameter": "temperature",
+      "value": 0.0
+    },
+    {
+      "valid_rate": 0.95,
+      "avg_description_len": 300.6,
+      "avg_output_tokens": 240.7,
+      "avg_attempts": 1.05,
+      "truncation_rate": 0.0,
+      "avg_latency": 6.858,
+      "errors_by_reason": {
+        "предложений": 1
+      },
+      "n": 20,
+      "valid": 19,
+      "elapsed_sec": 24.727,
+      "json_mode_effective": "guided",
+      "parameter": "temperature",
+      "value": 0.3
+    },
+    {
+      "valid_rate": 0.95,
+      "avg_description_len": 307.4,
+      "avg_output_tokens": 263.5,
+      "avg_attempts": 1.1,
+      "truncation_rate": 0.1,
+      "avg_latency": 7.46,
+      "errors_by_reason": {
+        "tags": 1
+      },
+      "n": 20,
+      "valid": 19,
+      "elapsed_sec": 23.408,
+      "json_mode_effective": "guided",
+      "parameter": "temperature",
+      "value": 0.7
+    },
+    {
+      "valid_rate": 0.95,
+      "avg_description_len": 300.6,
+      "avg_output_tokens": 240.7,
+      "avg_attempts": 1.05,
+      "truncation_rate": 0.0,
+      "avg_latency": 6.858,
+      "errors_by_reason": {
+        "предложений": 1
+      },
+      "n": 20,
+      "valid": 19,
+      "elapsed_sec": 24.727,
+      "json_mode_effective": "guided",
+      "parameter": "top_p",
+      "value": 0.9
+    },
+    {
+      "valid_rate": 0.85,
+      "avg_description_len": 300.4,
+      "avg_output_tokens": 277.5,
+      "avg_attempts": 1.15,
+      "truncation_rate": 0.05,
+      "avg_latency": 7.924,
+      "errors_by_reason": {
+        "предложений": 3,
+        "длина description": 2,
+        "pros": 1,
+        "cons": 1,
+        "tags": 1
+      },
+      "n": 20,
+      "valid": 17,
+      "elapsed_sec": 25.089,
+      "json_mode_effective": "guided",
+      "parameter": "top_p",
+      "value": 1.0
+    },
+    {
+      "valid_rate": 0.95,
+      "avg_description_len": 300.6,
+      "avg_output_tokens": 240.7,
+      "avg_attempts": 1.05,
+      "truncation_rate": 0.0,
+      "avg_latency": 6.819,
+      "errors_by_reason": {
+        "предложений": 1
+      },
+      "n": 20,
+      "valid": 19,
+      "elapsed_sec": 24.662,
+      "json_mode_effective": "guided",
+      "parameter": "top_k",
+      "value": 20
+    },
+    {
+      "valid_rate": 0.95,
+      "avg_description_len": 300.6,
+      "avg_output_tokens": 240.7,
+      "avg_attempts": 1.05,
+      "truncation_rate": 0.0,
+      "avg_latency": 6.858,
+      "errors_by_reason": {
+        "предложений": 1
+      },
+      "n": 20,
+      "valid": 19,
+      "elapsed_sec": 24.727,
+      "json_mode_effective": "guided",
+      "parameter": "top_k",
+      "value": 50
+    },
+    {
+      "valid_rate": 0.95,
+      "avg_description_len": 300.6,
+      "avg_output_tokens": 240.7,
+      "avg_attempts": 1.05,
+      "truncation_rate": 0.0,
+      "avg_latency": 6.844,
+      "errors_by_reason": {
+        "предложений": 1
+      },
+      "n": 20,
+      "valid": 19,
+      "elapsed_sec": 24.755,
+      "json_mode_effective": "guided",
+      "parameter": "top_k",
+      "value": "unlimited"
+    },
+    {
+      "valid_rate": 0.9,
+      "avg_description_len": 281.7,
+      "avg_output_tokens": 266.1,
+      "avg_attempts": 1.1,
+      "truncation_rate": 0.0,
+      "avg_latency": 7.28,
+      "errors_by_reason": {
+        "предложений": 2
+      },
+      "n": 20,
+      "valid": 18,
+      "elapsed_sec": 20.19,
+      "json_mode_effective": "guided",
+      "parameter": "repetition_penalty",
+      "value": 1.0
+    },
+    {
+      "valid_rate": 0.95,
+      "avg_description_len": 300.6,
+      "avg_output_tokens": 240.7,
+      "avg_attempts": 1.05,
+      "truncation_rate": 0.0,
+      "avg_latency": 6.858,
+      "errors_by_reason": {
+        "предложений": 1
+      },
+      "n": 20,
+      "valid": 19,
+      "elapsed_sec": 24.727,
+      "json_mode_effective": "guided",
+      "parameter": "repetition_penalty",
+      "value": 1.1
+    },
+    {
+      "valid_rate": 0.95,
+      "avg_description_len": 259.4,
+      "avg_output_tokens": 267.1,
+      "avg_attempts": 1.5,
+      "truncation_rate": 0.0,
+      "avg_latency": 8.278,
+      "errors_by_reason": {
+        "pros": 1
+      },
+      "n": 20,
+      "valid": 19,
+      "elapsed_sec": 23.717,
+      "json_mode_effective": "guided",
+      "parameter": "repetition_penalty",
+      "value": 1.2
+    },
+    {
+      "valid_rate": 0.95,
+      "avg_description_len": 290.3,
+      "avg_output_tokens": 248.5,
+      "avg_attempts": 1.1,
+      "truncation_rate": 0.15,
+      "avg_latency": 7.163,
+      "errors_by_reason": {
+        "длина description": 1,
+        "предложений": 1,
+        "pros": 1,
+        "cons": 1,
+        "tags": 1
+      },
+      "n": 20,
+      "valid": 19,
+      "elapsed_sec": 24.279,
+      "json_mode_effective": "guided",
+      "parameter": "max_tokens",
+      "value": 250
+    },
+    {
+      "valid_rate": 0.95,
+      "avg_description_len": 300.6,
+      "avg_output_tokens": 240.7,
+      "avg_attempts": 1.05,
+      "truncation_rate": 0.0,
+      "avg_latency": 6.858,
+      "errors_by_reason": {
+        "предложений": 1
+      },
+      "n": 20,
+      "valid": 19,
+      "elapsed_sec": 24.727,
+      "json_mode_effective": "guided",
+      "parameter": "max_tokens",
+      "value": 350
+    },
+    {
+      "valid_rate": 0.95,
+      "avg_description_len": 300.6,
+      "avg_output_tokens": 240.7,
+      "avg_attempts": 1.05,
+      "truncation_rate": 0.0,
+      "avg_latency": 6.841,
+      "errors_by_reason": {
+        "предложений": 1
+      },
+      "n": 20,
+      "valid": 19,
+      "elapsed_sec": 24.714,
+      "json_mode_effective": "guided",
+      "parameter": "max_tokens",
+      "value": 500
+    },
+    {
+      "valid_rate": 0.95,
+      "avg_description_len": 300.6,
+      "avg_output_tokens": 240.7,
+      "avg_attempts": 1.05,
+      "truncation_rate": 0.0,
+      "avg_latency": 6.858,
+      "errors_by_reason": {
+        "предложений": 1
+      },
+      "n": 20,
+      "valid": 19,
+      "elapsed_sec": 24.727,
+      "json_mode_effective": "guided",
+      "parameter": "json_mode",
+      "value": "guided"
+    },
+    {
+      "valid_rate": 0.95,
+      "avg_description_len": 300.6,
+      "avg_output_tokens": 240.7,
+      "avg_attempts": 1.05,
+      "truncation_rate": 0.0,
+      "avg_latency": 7.016,
+      "errors_by_reason": {
+        "предложений": 1
+      },
+      "n": 20,
+      "valid": 19,
+      "elapsed_sec": 25.163,
+      "json_mode_effective": "object",
+      "parameter": "json_mode",
+      "value": "object"
+    },
+    {
+      "valid_rate": 0.9,
+      "avg_description_len": 298.8,
+      "avg_output_tokens": 247.9,
+      "avg_attempts": 1.1,
+      "truncation_rate": 0.0,
+      "avg_latency": 6.48,
+      "errors_by_reason": {
+        "предложений": 2,
+        "длина description": 1,
+        "pros": 1,
+        "cons": 1,
+        "tags": 1
+      },
+      "n": 20,
+      "valid": 18,
+      "elapsed_sec": 23.236,
+      "json_mode_effective": "off",
+      "parameter": "json_mode",
+      "value": "off"
+    }
+  ],
+  "chosen": {
+    "temperature": 0.3,
+    "top_p": 0.9,
+    "top_k": 20,
+    "repetition_penalty": 1.1,
+    "max_tokens": 350,
+    "max_attempts": 2,
+    "json_mode": "guided"
+  },
+  "confirmation": {
+    "valid_rate": 0.875,
+    "avg_description_len": 297.6,
+    "avg_output_tokens": 268.9,
+    "avg_attempts": 1.125,
+    "truncation_rate": 0.025,
+    "avg_latency": 7.982,
+    "errors_by_reason": {
+      "предложений": 5,
+      "длина description": 2,
+      "pros": 1,
+      "cons": 1,
+      "tags": 1
+    },
+    "n": 40,
+    "valid": 35,
+    "elapsed_sec": 45.444,
+    "json_mode_effective": "guided"
+  }
+}
